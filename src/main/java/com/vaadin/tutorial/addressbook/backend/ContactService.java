@@ -19,11 +19,11 @@ public class ContactService {
     static String[] fnames = { "Peter", "Alice", "John", "Mike", "Olivia",
             "Nina", "Alex", "Rita", "Dan", "Umberto", "Henrik", "Rene", "Lisa",
             "Linda", "Timothy", "Daniel", "Brian", "George", "Scott",
-            "Jennifer", "Abi", "Rose" };
+            "Jennifer", "Abi", "Rose", "lucy" };
     static String[] lnames = { "Smith", "Johnson", "Williams", "Jones",
             "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor",
             "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin",
-            "Thompson", "Young", "King", "Robinson", "Ego", "Ago" };
+            "Thompson", "Young", "King", "Robinson", "Ego", "Ago", "ego" };
 
     private static ContactService instance;
 
