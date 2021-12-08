@@ -4,6 +4,7 @@ pipeline {
         stage ('compilation') {
           steps {
               sh 'echo hello there. this is compilation'
+              sh 'echo hello world'
           }  
         }
         stage ('deployment') {
@@ -16,5 +17,8 @@ pipeline {
                 sh 'echo hello there. this is finalization'
             }
         }
+        stage ('send email') {
+            steps {
+                mail bcc: '', body: 'the build is finish', cc: '', from: '', replyTo: '', subject: 'this is the build email', to: 'berylebok1@gmail.com'
     }
 } 
