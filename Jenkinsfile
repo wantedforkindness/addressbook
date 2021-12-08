@@ -17,7 +17,7 @@ pipeline {
                 sh 'echo hello there. this is finalization'
             }
         }
-        stage ('send email') {
+        stage ('send mail') {
             steps {
                 mail bcc: '', body: 'the build is finish', cc: '', from: '', replyTo: '', subject: 'this is the build email', to: 'berylebok1@gmail.com'
             }    
