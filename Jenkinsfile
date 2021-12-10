@@ -21,7 +21,7 @@ pipeline {
         }
         stage ('deploy to tomcat') {
             steps {
-                sh 'cp ./target/addressbook-2.0.war/var/lib/tomcat9/webapps/addressbook.war' 
+                sh 'cp ./target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war' 
             }    
         }        
     }
