@@ -26,7 +26,8 @@ stage('email'){
     steps {
 mail bcc: '', body: 'this is building as requested.', cc: '', from: '', replyTo: '', subject: 'Building result', to: 'berylebok1@gmail.com'
 }
-}   
+}
+}
   post {
   always {
     // One or more steps need to be included within each condition's block.
@@ -41,5 +42,5 @@ mail bcc: '', body: 'this is building as requested.', cc: '', from: '', replyTo:
     sh 'echo well try again, failed'
   }
 }   
-}
+
 }
