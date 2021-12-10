@@ -11,7 +11,7 @@ pipeline {
         stage ('static code analysis') {
             steps {
    //             sh 'echo hello there. this is deployment'
-                sh '/opt/ubuntu/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
+                sh '/home/ubuntu/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
             }
         }
         stage ('package') {
