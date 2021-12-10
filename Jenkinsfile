@@ -31,7 +31,7 @@ pipeline {
     sh 'echo the buid is successfull'
   }
   failure {
-    sh 'echo the buid failed
+    sh 'echo the buid failed'
   }
 }
 } 
