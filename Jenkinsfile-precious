@@ -22,6 +22,13 @@ stage('SonarQube analysis') {
     sh 'mvn package'
   }
 }
+stage('deploy') {
+  steps {
+    // One or more steps need to be included within the steps block.
+    sh 'cp /tmp/jenkins-data/workspace/pipeline-as-code-precious/target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war'
+  }
+}
+
 stage('email'){
     steps {
 mail bcc: '', body: 'this is building as requested.', cc: '', from: '', replyTo: '', subject: 'Building result', to: 'berylebok1@gmail.com'
