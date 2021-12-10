@@ -22,7 +22,7 @@ stage('SonarQube analysis') {
     sh 'mvn package'
   }
 }
-stages ('email'){
+stage('email'){
     steps {
 mail bcc: '', body: 'this is building as requested.', cc: '', from: '', replyTo: '', subject: 'Building result', to: 'berylebok1@gmail.com'
 }
