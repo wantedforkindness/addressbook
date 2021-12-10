@@ -25,13 +25,13 @@ pipeline {
     }
     post {
   always {
-    // One or more steps need to be included within each condition's block.
+      sh 'echo the build as completed'
   }
   success {
-    // One or more steps need to be included within each condition's block.
+    sh 'echo the buid is successfull'
   }
   failure {
-    // One or more steps need to be included within each condition's block.
+    sh 'echo the buid failed
   }
 }
 } 
