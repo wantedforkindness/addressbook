@@ -1,0 +1,44 @@
+pipeline{
+    agent {
+  label 'node1'
+}
+stages{
+    stage('compilation') {
+  steps {
+    // One or more steps need to be included within the steps block.
+    sh 'mvn -B compile'
+  }
+}
+stage('SonarQube analysis') {
+    staps{
+    withSonarQubeEnv(credentialsId: 'SonarQube-key', installationName: 'SonarQube-key') { // You can override the credential to be used
+      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+    }
+  }
+}  
+ stage('package') {
+  steps {
+    // One or more steps need to be included within the steps block.
+    sh 'mvn package'
+  }
+}
+stages ('email'){
+    steps {
+mail bcc: '', body: 'this is building as requested.', cc: '', from: '', replyTo: '', subject: 'Building result', to: 'berylebok1@gmail.com'
+}
+}   
+  post {
+  always {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo building now'
+  }
+  success {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo yay, its working'
+  }
+  failure {
+    // One or more steps need to be included within each condition's block.
+    sh 'echo well try again, failed'
+  }
+}   
+}
