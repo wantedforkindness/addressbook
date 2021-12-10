@@ -10,7 +10,7 @@ stages{
   }
 }
 stage('SonarQube analysis') {
-    staps{
+    steps{
     withSonarQubeEnv(credentialsId: 'SonarQube-key', installationName: 'SonarQube-key') { // You can override the credential to be used
       sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
     }
