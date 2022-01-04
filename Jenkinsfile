@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('build and publish to dockerhub') {
            steps {
-                sh 'sudo docker build -t berylobi/ab:latest'
+                sh 'sudo docker build -t berylobi/ab:latest .'
                sh 'sudo docker push berylobi/ab:latest'
           }    
        }        
