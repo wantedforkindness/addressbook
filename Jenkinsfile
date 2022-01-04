@@ -21,9 +21,9 @@ pipeline {
     //       steps {
    //             sh 'cp ./target/addressbook-2.0.war /var/lib/tomcat9/webapps/addressbook.war' 
   //        }    
-        }        
+ //      }        
     }
-    post {
+post {
   always {
       sh 'echo the build as completed'
   }
@@ -32,6 +32,6 @@ pipeline {
   }
   failure {
     sh 'echo the buid failed'
-  }
-}
+     }
+   }
 } 
